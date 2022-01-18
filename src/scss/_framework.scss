@@ -81,3 +81,29 @@ a {
   will-change: transform;
   display: block;
 }
+.link-hover {
+  font-size: 18px;
+  position: relative;
+  white-space: nowrap;
+  &:hover {
+    span {
+      animation: glitchText 0.4s linear;
+    }
+    &:before {
+      opacity: 1;
+      animation: glitchLine 0.4s steps(2, start) forwards;
+    }
+  }
+  &:before {
+    content: '';
+    height: 2px;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    top: 100%;
+    left: 0;
+    pointer-events: none;
+  }
+}

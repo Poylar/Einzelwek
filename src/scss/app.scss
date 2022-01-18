@@ -1,5 +1,6 @@
 @import 'reset';
 @import 'vars';
+@import 'lib';
 @import 'mixins';
 @import 'fonts';
 @import 'framework';
@@ -93,16 +94,10 @@ body {
           font-weight: 350;
           .description__links {
             color: var(--green);
+            .sep {
+              color: #404040;
+            }
             .link {
-              &:last-child {
-                &:after {
-                  content: none;
-                }
-              }
-              &:after {
-                content: ' / ';
-                color: #404040;
-              }
             }
           }
         }
@@ -134,7 +129,7 @@ body {
           z-index: -1;
           border-radius: 2px;
           position: absolute;
-          transition:height .8s;
+          transition: height 0.8s;
           left: 0;
           top: 0;
           background: var(--green);
@@ -187,11 +182,42 @@ body {
         grid-column: 8 / span 5;
         background-image: url(../images/heart-bg.svg);
         background-repeat: no-repeat;
-        background-position: center right;
+        background-position: 120% center;
+        transition: 0.8s;
         background-size: contain;
+        &.active {
+          background-position: 100% center;
+        }
       }
       .card-4 {
         grid-column: 5 / span 8;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+        .item__button {
+          font-family: 'Heading-Now-83', sans-serif;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          background: var(--green);
+          z-index: 44;
+          padding: 16px 36px;
+          transform: translate(-50%, -50%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 8px;
+          color: var(--dark);
+          cursor: pointer;
+          font-weight: 300;
+          svg {
+            position: relative;
+            z-index: 88;
+          }
+          span {
+            margin: 0 0 0 14px;
+          }
+        }
       }
     }
   }
