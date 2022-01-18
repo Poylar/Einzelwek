@@ -21,7 +21,7 @@ setTimeout(() => {
   preloaderText.style.width = `${preloaderTextHidden.getBoundingClientRect().width + preloaderLetterWidth + 7}px`;
 }, 500);
 
-preloaderText.addEventListener('transitionend', function () {
+preloaderText.addEventListener('transitionend', () => {
   setTimeout(() => {
     const tl = gsap.timeline();
     tl.to(preloader, {
@@ -29,16 +29,25 @@ preloaderText.addEventListener('transitionend', function () {
     });
     tl.to(preloader, {
       yPercent: -100,
-      onComplete: function() {
-        const i = document.querySelectorAll('.text  ');
+      onComplete: function () {
+        const i = document.querySelectorAll('.text');
         i.forEach((elem, index) => {
           setTimeout(() => {
             elem.style.transform = `translate3d(0px , 0%, 0px) rotate(0deg)`;
           }, 50 * (index + 1));
         });
-      }
+        document.querySelector('.card-1').classList.add('active');
+      },
     });
+    tl.fromTo(
+      '.opacity-show',
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        stagger: .3
+      }
+    );
   }, 400);
 });
-
-

@@ -97,13 +97,21 @@ body {
               &:last-child {
                 &:after {
                   content: none;
-                 
                 }
               }
               &:after {
                 content: ' / ';
-                color:#404040;
+                color: #404040;
               }
+            }
+          }
+        }
+        .location__wrapper {
+          .location__item {
+            margin: 0 0 20px 0;
+            .text {
+              font-size: em(36);
+              font-weight: 400;
             }
           }
         }
@@ -114,13 +122,19 @@ body {
         position: relative;
         z-index: 2;
         padding: 36px 36px 40px 36px;
+        &.active {
+          &:before {
+            height: 93%;
+          }
+        }
         &:before {
           content: '';
           width: 2px;
-          height: 95%;
+          height: 0%;
           z-index: -1;
           border-radius: 2px;
           position: absolute;
+          transition:height .8s;
           left: 0;
           top: 0;
           background: var(--green);
@@ -171,6 +185,10 @@ body {
       }
       .card-3 {
         grid-column: 8 / span 5;
+        background-image: url(../images/heart-bg.svg);
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-size: contain;
       }
       .card-4 {
         grid-column: 5 / span 8;
