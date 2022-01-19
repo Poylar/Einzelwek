@@ -83,6 +83,9 @@ body {
       grid-template-columns: repeat(12, 1fr);
       grid-template-rows: repeat(7, 1fr);
       grid-gap: 24px;
+      @media (max-width: 1440px) {
+        grid-template-rows: repeat(2, 1fr);
+      }
       .card__item {
         padding: 36px;
         background: var(--dark);
@@ -99,9 +102,15 @@ body {
         .item__description {
           line-height: 175%;
           font-weight: 350;
+          @media (max-width: 1440px) {
+            br {
+              display: none;
+            }
+          }
           .description__links {
             color: var(--green);
             display: inline-block;
+
             .sep {
               color: #404040;
             }
@@ -112,6 +121,9 @@ body {
         .location__wrapper {
           .location__item {
             margin: 0 0 20px 0;
+            @media (max-width:1440px) {
+              margin: 0 0 12px 0;
+            }
             .text {
               font-size: em(36);
               font-weight: 400;
@@ -128,6 +140,9 @@ body {
         position: relative;
         z-index: 2;
         padding: 36px 36px 40px 36px;
+        @media (max-width: 1440px) {
+          grid-row: 1 / 3;
+        }
         &.active {
           &:before {
             height: 100%;
@@ -157,10 +172,16 @@ body {
 
         .list__wrapper {
           margin: 42px 0 0;
+          @media (max-width: 1440px) {
+            margin: 34px 0 0;
+          }
           .list__title {
             font-weight: 500;
-            font-size: em(14);
+            font-size: em(16);
             margin: 0 0 26px 0;
+            @media (max-width: 1440px) {
+              margin: 0 0 20px 0;
+            }
           }
           .list {
             .list__item {
@@ -170,6 +191,9 @@ body {
               line-height: 175%;
               position: relative;
               padding: 0 0 0 30px;
+              @media (max-width: 1440px) {
+                margin: 0 0 19px;
+              }
               font-family: 'Heading-Now-83';
               &:last-child {
                 margin: 0;
@@ -192,6 +216,9 @@ body {
       .card-2 {
         grid-column: 5 / span 3;
         grid-row: 1 / span 3;
+        @media (max-width: 1440px) {
+          grid-row: auto;
+        }
       }
       .card-3 {
         grid-column: 8 / span 5;
@@ -201,6 +228,9 @@ body {
         background-position: 100% center;
         transition: 0.8s;
         background-size: contain;
+        @media (max-width: 1440px) {
+          grid-row: auto;
+        }
         &.active {
           background-position: 100% center;
         }
@@ -211,6 +241,9 @@ body {
         padding: 0;
         overflow: hidden;
         position: relative;
+        @media (max-width: 1440px) {
+          grid-row: auto;
+        }
         .swiper {
           height: 100%;
         }
@@ -242,11 +275,12 @@ body {
     }
   }
   .footer {
-  flex:1;
+    flex: 1;
+    padding: 32px 0;
     &__copyright {
       font-family: 'NeueMachina';
       span {
-        opacity: .6;
+        opacity: 0.6;
         font-size: em(14);
       }
       .copyright__icon {
