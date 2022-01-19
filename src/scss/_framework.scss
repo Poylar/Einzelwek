@@ -67,6 +67,10 @@ a {
 .container {
   max-width: var(--container-width);
   margin: auto;
+  @media (max-width:1360px) {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
 }
 
 .oh {
@@ -85,6 +89,9 @@ a {
   font-size: 18px;
   position: relative;
   white-space: nowrap;
+  @media (max-width:1024px) {
+   font-size: em(16);       
+  }
   &:hover {
    
     &:before {

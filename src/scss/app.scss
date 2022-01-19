@@ -59,8 +59,14 @@ body {
     @media (max-width: 1440px) {
       padding: 40px 0;
     }
+    @media (max-width: 1024px) {
+      padding: 20px 0 22px 0;
+    }
     .header__logo {
       width: 147px;
+      @media (max-width: 1024px) {
+        width: auto;
+      }
       a {
         display: block;
       }
@@ -68,8 +74,14 @@ body {
     .header__info {
       font-weight: 350;
       font-size: em(18);
+      @media (max-width: 1024px) {
+        font-size: em(16);
+      }
       .info__item {
         margin: 0 36px 0 0;
+        @media (max-width: 1024px) {
+          margin: 0 24px 0 0;
+        }
         &:last-child {
           margin: 0;
         }
@@ -86,11 +98,21 @@ body {
       @media (max-width: 1440px) {
         grid-template-rows: repeat(2, 1fr);
       }
+      @media (max-width: 1024px) {
+        grid-template-rows: auto;
+        grid-template-columns: 100%;
+        grid-gap: 12px;
+      }
       .card__item {
         padding: 36px;
         background: var(--dark);
         border-radius: 8px;
         font-weight: 300;
+        @media (max-width: 1024px) {
+          padding: 24px;
+          grid-column: auto !important;
+          grid-row: auto !important;
+        }
         .title__icon {
           margin: 0 0 25px 0;
           .item__title {
@@ -121,7 +143,7 @@ body {
         .location__wrapper {
           .location__item {
             margin: 0 0 20px 0;
-            @media (max-width:1440px) {
+            @media (max-width: 1440px) {
               margin: 0 0 12px 0;
             }
             .text {
@@ -129,6 +151,9 @@ body {
               font-weight: 400;
               @media (max-width: 1440px) {
                 font-size: em(28);
+              }
+              @media (max-width: 1024px) {
+                font-size: em(22);
               }
             }
           }
@@ -142,6 +167,9 @@ body {
         padding: 36px 36px 40px 36px;
         @media (max-width: 1440px) {
           grid-row: 1 / 3;
+        }
+        @media (max-width: 1024px) {
+          padding: 24px;
         }
         &.active {
           &:before {
@@ -167,6 +195,9 @@ body {
           font-size: em(36);
           @media (max-width: 1440px) {
             font-size: em(28);
+          }
+          @media (max-width: 1024px) {
+            font-size: em(22);
           }
         }
 
@@ -228,11 +259,17 @@ body {
         background-position: 100% center;
         transition: 0.8s;
         background-size: contain;
+        @media (max-width: 1024px) {
+          background-position: 130% center;
+        }
         @media (max-width: 1440px) {
           grid-row: auto;
         }
         &.active {
           background-position: 100% center;
+          @media (max-width: 1024px) {
+            background-position: 111% center;
+          }
         }
       }
       .card-4 {
@@ -244,8 +281,23 @@ body {
         @media (max-width: 1440px) {
           grid-row: auto;
         }
+        @media (max-width: 1024px) {
+          height: 212px;
+          overflow: visible;
+          margin: 0 0 62px 0;
+        }
         .swiper {
           height: 100%;
+          .swiper-slide {
+            height: 100%;
+            position: relative;
+            border-radius: 8px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            @media (max-width:1024px) {
+             background-size:cover;
+            }
+          }
         }
         .item__button {
           font-family: 'Heading-Now-83', sans-serif;
@@ -263,6 +315,27 @@ body {
           color: var(--dark);
           cursor: pointer;
           font-weight: 300;
+
+          a {
+            color: inherit;
+            text-decoration: none;
+            &:before {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              left: 0;
+              top: 0;
+              display: block;
+            }
+          }
+          @media (max-width: 1024px) {
+            padding: 12px 24px;
+            font-size: em(14);
+            bottom: -25%;
+            top: auto;
+            z-index: 2;
+          }
           svg {
             position: relative;
             z-index: 88;
@@ -277,6 +350,14 @@ body {
   .footer {
     flex: 1;
     padding: 32px 0;
+    @media (max-width: 1024px) {
+      padding: 0 0 32px 0;
+    }
+    .container {
+      @media (max-width: 1024px) {
+        justify-content: flex-start;
+      }
+    }
     &__copyright {
       font-family: 'NeueMachina';
       span {

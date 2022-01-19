@@ -54,7 +54,10 @@
       <header class="header container row space-between align-center">
         <div class="header__logo">
           <a href="/">
-            <img src="./images/logo.svg" alt="" />
+            <picture>
+              <source srcset="./images/mobile-logo.svg" media="(max-width: 1024px)">
+              <img src="./images/logo.svg" alt="" />
+            </picture>
           </a>
         </div>
         <div class="header__info row">
@@ -95,8 +98,7 @@
               <h3 class="item__title oh"><span class="text">Дисклеймер</span></h3>
             </div>
             <div class="item__description opacity-show">
-              Мы упорно работаем над нашим сайтом и проектами заказчиков, пока что вы можете написать нам <br class="br" />
-              на
+              Мы упорно работаем над нашим сайтом и проектами заказчиков, пока что вы можете написать нам <br class="br" /> на
               <div class="description__links">
                 <a href="" class="link link-hover"><span>почту</span></a
                 ><span class="sep"> / </span> <a href="" class="link link-hover"><span>телеграм</span></a
@@ -131,7 +133,7 @@
             </div>
             <div class="swiper slider">
               <div class="swiper-wrapper">
-                <% for(var i = 1; i < 6; i++) { %>
+                <% for(var i = 1; i < 4; i++) { %>
                 <div class="swiper-slide" style="background-image: url('./images/<%= i -%>.jpg')"></div>
 
                 <% } %>
