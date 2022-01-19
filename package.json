@@ -41,6 +41,6 @@
   },
   "dependencies": {
     "gsap": "^3.9.1",
-    "imagesloaded": "^4.1.4"
+    "swiper": "^7.4.1"
   }
 }
