@@ -29,22 +29,38 @@ body {
   z-index: 99;
   background: var(--black);
   font-size: 4em;
+  .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 1024px) {
+      transform: scale(0.5);
+    }
+  }
   &__text {
     overflow: hidden;
     display: flex;
     transition: width 0.7s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    @media (max-width: 1024px) {
+    }
     &_letter {
-      margin: 0 7px 0 0;
+      padding: 0 7px 0 0;
     }
     &_hidden {
+      position: absolute;
+      opacity: 0;
+
+      &.active {
+        position: relative;
+        opacity: 1;
+      }
     }
   }
   &__icon {
     transform: scale(-1, 1);
-    margin: 0 0 0 7px;
+
     &.active {
       transform: none;
-      margin: 0;
     }
   }
 }
@@ -294,9 +310,7 @@ body {
             border-radius: 8px;
             background-position: center center;
             background-repeat: no-repeat;
-            @media (max-width:1024px) {
-             background-size:cover;
-            }
+            background-size: cover;
           }
         }
         .item__button {
