@@ -23,7 +23,7 @@ module.exports = {
   devServer: {
     hot: false,
 
-    port: 9090,
+    port: 9040,
     static: './dist',
     watchFiles: 'src/**/*',
   },
