@@ -90,11 +90,14 @@ body {
     .header__info {
       font-weight: 350;
       font-size: em(18);
+      a {
+        display: block;
+      }
       @media (max-width: 1024px) {
         font-size: em(16);
       }
       .info__item {
-        margin: 0 36px 0 0;
+        margin: 0 32px 0 0;
         @media (max-width: 1024px) {
           margin: 0 24px 0 0;
         }

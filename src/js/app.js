@@ -74,6 +74,7 @@ window.onload = () => {
           const slider = new Swiper('.slider', {
             speed: 1000,
             effect: 'fade',
+            loop:true,
             fadeEffect: {
               crossFade: true,
             },

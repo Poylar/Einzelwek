@@ -86,7 +86,7 @@ a {
   display: block;
 }
 .link-hover {
-  font-size: 18px;
+  font-size: em(16);
   position: relative;
   white-space: nowrap;
   @media (max-width:1024px) {
