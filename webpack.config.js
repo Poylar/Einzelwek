@@ -45,9 +45,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: '!!ejs-compiled-loader!/index.ejs',
-      minify: {
-        collapseWhitespace: isProd,
-      },
+      minify:false,
     }),
   ],
   module: {
