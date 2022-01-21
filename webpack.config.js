@@ -21,9 +21,6 @@ module.exports = {
   },
 
   devServer: {
-    hot: false,
-
-    port: 9040,
     static: './dist',
     watchFiles: 'src/**/*',
   },
@@ -45,7 +42,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: '!!ejs-compiled-loader!/index.ejs',
-      minify:false,
+      minify: false,
     }),
   ],
   module: {

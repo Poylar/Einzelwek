@@ -33,7 +33,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    @media (max-width: 1024px) {
+    @media (max-width: 1140px) {
       transform: scale(0.5);
     }
   }
@@ -41,7 +41,7 @@ body {
     overflow: hidden;
     display: flex;
     transition: width 0.7s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-    @media (max-width: 1024px) {
+    @media (max-width: 1140px) {
     }
     &_letter {
       padding: 0 7px 0 0;
@@ -72,15 +72,15 @@ body {
   .header {
     padding: 48px 0;
     width: 100%;
-    @media (max-width: 1440px) {
+    @media (max-width: 1600px) {
       padding: 40px 0;
     }
-    @media (max-width: 1024px) {
+    @media (max-width: 1140px) {
       padding: 20px 0 22px 0;
     }
     .header__logo {
       width: 147px;
-      @media (max-width: 1024px) {
+      @media (max-width: 1140px) {
         width: auto;
       }
       a {
@@ -93,12 +93,12 @@ body {
       a {
         display: block;
       }
-      @media (max-width: 1024px) {
+      @media (max-width: 1140px) {
         font-size: em(16);
       }
       .info__item {
         margin: 0 32px 0 0;
-        @media (max-width: 1024px) {
+        @media (max-width: 1140px) {
           margin: 0 24px 0 0;
         }
         &:last-child {
@@ -114,10 +114,10 @@ body {
       grid-template-columns: repeat(12, 1fr);
       grid-template-rows: repeat(7, 1fr);
       grid-gap: 24px;
-      @media (max-width: 1440px) {
+      @media (max-width: 1600px) {
         grid-template-rows: repeat(2, 1fr);
       }
-      @media (max-width: 1024px) {
+      @media (max-width: 1140px) {
         grid-template-rows: auto;
         grid-template-columns: 100%;
         grid-gap: 12px;
@@ -127,7 +127,7 @@ body {
         background: var(--dark);
         border-radius: 8px;
         font-weight: 300;
-        @media (max-width: 1024px) {
+        @media (max-width: 1140px) {
           padding: 24px;
           grid-column: auto !important;
           grid-row: auto !important;
@@ -143,35 +143,35 @@ body {
         .item__description {
           line-height: 175%;
           font-weight: 350;
-          @media (max-width: 1440px) {
+          &.description__links {
+            a {
+              color: var(--green);
+              display: inline-block;
+              .sep {
+                color: #404040;
+              }
+            }
+           
+          }
+          @media (max-width: 1600px) {
             br {
               display: none;
-            }
-          }
-          .description__links {
-            color: var(--green);
-            display: inline-block;
-
-            .sep {
-              color: #404040;
-            }
-            .link {
             }
           }
         }
         .location__wrapper {
           .location__item {
             margin: 0 0 20px 0;
-            @media (max-width: 1440px) {
+            @media (max-width: 1600px) {
               margin: 0 0 12px 0;
             }
             .text {
               font-size: em(36);
               font-weight: 400;
-              @media (max-width: 1440px) {
+              @media (max-width: 1600px) {
                 font-size: em(28);
               }
-              @media (max-width: 1024px) {
+              @media (max-width: 1140px) {
                 font-size: em(22);
               }
             }
@@ -184,10 +184,10 @@ body {
         position: relative;
         z-index: 2;
         padding: 36px 36px 40px 36px;
-        @media (max-width: 1440px) {
+        @media (max-width: 1600px) {
           grid-row: 1 / 3;
         }
-        @media (max-width: 1024px) {
+        @media (max-width: 1140px) {
           padding: 24px;
         }
         &.active {
@@ -212,24 +212,27 @@ body {
           font-weight: 400;
           margin: 0 0 16px 0;
           font-size: em(36);
-          @media (max-width: 1440px) {
+          @media (max-width: 1600px) {
+            font-size: em(32);
+          }
+          @media (max-width: 1600px) {
             font-size: em(28);
           }
-          @media (max-width: 1024px) {
+          @media (max-width: 1300px) {
             font-size: em(22);
           }
         }
 
         .list__wrapper {
           margin: 42px 0 0;
-          @media (max-width: 1440px) {
+          @media (max-width: 1600px) {
             margin: 34px 0 0;
           }
           .list__title {
             font-weight: 500;
             font-size: em(16);
             margin: 0 0 26px 0;
-            @media (max-width: 1440px) {
+            @media (max-width: 1600px) {
               margin: 0 0 20px 0;
             }
           }
@@ -241,7 +244,7 @@ body {
               line-height: 175%;
               position: relative;
               padding: 0 0 0 30px;
-              @media (max-width: 1440px) {
+              @media (max-width: 1600px) {
                 margin: 0 0 19px;
               }
               font-family: 'Heading-Now-83';
@@ -266,7 +269,7 @@ body {
       .card-2 {
         grid-column: 5 / span 3;
         grid-row: 1 / span 3;
-        @media (max-width: 1440px) {
+        @media (max-width: 1600px) {
           grid-row: auto;
         }
       }
@@ -278,15 +281,15 @@ body {
         background-position: 100% center;
         transition: 0.8s;
         background-size: contain;
-        @media (max-width: 1024px) {
+        @media (max-width: 1140px) {
           background-position: 130% center;
         }
-        @media (max-width: 1440px) {
+        @media (max-width: 1600px) {
           grid-row: auto;
         }
         &.active {
           background-position: 100% center;
-          @media (max-width: 1024px) {
+          @media (max-width: 1140px) {
             background-position: 111% center;
           }
         }
@@ -297,10 +300,10 @@ body {
         padding: 0;
         overflow: hidden;
         position: relative;
-        @media (max-width: 1440px) {
+        @media (max-width: 1600px) {
           grid-row: auto;
         }
-        @media (max-width: 1024px) {
+        @media (max-width: 1140px) {
           height: 212px;
           overflow: visible;
           margin: 0 0 62px 0;
@@ -346,7 +349,7 @@ body {
               display: block;
             }
           }
-          @media (max-width: 1024px) {
+          @media (max-width: 1140px) {
             padding: 12px 24px;
             font-size: em(14);
             bottom: -25%;
@@ -367,11 +370,11 @@ body {
   .footer {
     flex: 1;
     padding: 32px 0;
-    @media (max-width: 1024px) {
+    @media (max-width: 1140px) {
       padding: 0 0 32px 0;
     }
     .container {
-      @media (max-width: 1024px) {
+      @media (max-width: 1140px) {
         justify-content: flex-start;
       }
     }
