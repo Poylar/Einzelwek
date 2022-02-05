@@ -1,9 +1,5 @@
 import '../scss/app.scss';
 import { gsap } from 'gsap';
-import Swiper, { EffectFade, Autoplay } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-Swiper.use([EffectFade, Autoplay]);
 
 function requireAll(r) {
   // get all svg
@@ -53,48 +49,21 @@ window.onload = () => {
         stagger: 0.3,
       }
     );
-    tl.fromTo('.content', { scale: 0 }, { scale: 1 });
     tl.fromTo(
-      '.button',
+      '.content',
+      { scale: 0 },
       {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-      }
-    );
-    gsap.fromTo(
-      '.slider',
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        onComplete: function () {
-          const slider = new Swiper('.slider', {
-            speed: 1000,
-            effect: 'fade',
-            loop:true,
-            fadeEffect: {
-              crossFade: true,
-            },
-            autoplay: {
-              delay: 2555,
-              disableOnInteraction: false,
-            },
-          });
-          if (window.innerWidth >= 1024) {
-            slider.autoplay.stop();
-            const sliderContainer = document.querySelector('.slider');
-            sliderContainer.addEventListener('mouseenter', () => {
-              slider.autoplay.start();
-            });
-            sliderContainer.addEventListener('mouseleave', () => {
-              slider.autoplay.stop();
-            });
-          }
+        scale: 1,
+        onComplete: () => {
+          document.querySelector('.inner__video').play();
         },
       }
     );
   });
 };
+
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.header__lang')) {
+    document.querySelector('.lang__list').classList.toggle('open');
+  }
+});

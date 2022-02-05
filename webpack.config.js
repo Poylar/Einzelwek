@@ -23,6 +23,8 @@ module.exports = {
   devServer: {
     static: './dist',
     watchFiles: 'src/**/*',
+    liveReload: false,
+    hot: 'only',
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -102,7 +104,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|mp4)$/i,
         type: 'asset/resource',
         generator: {
           filename: './images/[name][ext]',
