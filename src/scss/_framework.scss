@@ -69,6 +69,15 @@ a {
   margin: auto;
   padding-left: 16px !important;
   padding-right: 16px !important;
+  @media (max-width:1440px) {
+    width: 100%;
+    padding-left: 40px !important;
+    padding-right: 40px !important  ;
+  }
+  @media (max-width:556px) {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
 }
 
 .oh {
@@ -84,12 +93,10 @@ a {
   display: block;
 }
 .link-hover {
-  font-size: em(16);
+
   position: relative;
   white-space: nowrap;
-  @media (max-width: 1024px) {
-    font-size: em(16);
-  }
+ 
   &:hover {
     &:before {
       transform-origin: 0% 50%;
