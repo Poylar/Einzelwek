@@ -64,6 +64,6 @@ window.onload = () => {
 
 document.addEventListener('click', (e) => {
   if (e.target.closest('.header__lang')) {
-    document.querySelector('.lang__list').classList.toggle('open');
+    document.querySelector('.header__lang').classList.toggle('open');
   }
 });
