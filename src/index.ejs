@@ -61,17 +61,17 @@
         <div class="header__logo">
           <a href="/">
             <picture>
-              <source srcset="./images/mobile-logo.svg" media="(max-width: 768px)" />
+              <!-- <source srcset="./images/mobile-logo.svg" media="(max-width: 556px)" /> -->
               <img src="./images/logo.svg" alt="" />
             </picture>
           </a>
         </div>
         <div class="header__info row align-center">
           <div class="header__lang">
-            <div class="lang__current">Русский</div>
+            <div class="lang__current" data-lang>Русский</div>
             <div class="lang__list">
-              <div class="list__item">English</div>
-              <div class="list__item">Deutsch</div>
+              <div class="list__item" data-lang>English</div>
+              <div class="list__item" data-lang>Deutsch</div>
             </div>
           </div>
           <div class="header__callback">
@@ -99,12 +99,12 @@
               <h4 class="list__title">Зоны эксперизы</h4>
               <ul class="row list">
                 <div class="col">
-                  <div class="list__item">Разработка:<br />Front-end / Back-end</div>
+                  <div class="list__item">Разработка: <br />Front-end / Back-end</div>
                   <div class="list__item">
                     Дизайн и<br />
                     юзабилити: UX/UI
                   </div>
-                  <div class="list__item">Продвижение:<br />SEO/ SEA/ SMM</div>
+                  <div class="list__item">Продвижение: <br />SEO/ SEA/ SMM</div>
                 </div>
                 <div class="col">
                   <div class="list__item">Продуктовая бизнес-аналитика</div>
@@ -145,7 +145,7 @@
           </div>
           <div class="card__item card-4">
             <div class="video__wrapper">
-              <video class="inner__video" src="./images/preview.mp4" muted></video>
+              <video class="inner__video" src="./images/preview.mp4" muted loop></video>
             </div>
           </div>
         </div>

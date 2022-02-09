@@ -6,6 +6,26 @@ function requireAll(r) {
   r.keys().forEach(r);
 }
 requireAll(require.context('../images/svg/', true, /\.svg$/));
+(function () {
+  var throttle = function (type, name, obj) {
+    obj = obj || window;
+    var running = false;
+    var func = function () {
+      if (running) {
+        return;
+      }
+      running = true;
+      requestAnimationFrame(function () {
+        obj.dispatchEvent(new CustomEvent(name));
+        running = false;
+      });
+    };
+    obj.addEventListener(type, func);
+  };
+
+  /* init - you can init any event */
+  throttle('resize', 'optimizedResize');
+})();
 window.onload = () => {
   const preloader = document.querySelector('.preloader');
   const preloaderText = document.querySelector('.preloader__text');
@@ -66,4 +86,17 @@ document.addEventListener('click', (e) => {
   if (e.target.closest('.header__lang')) {
     document.querySelector('.header__lang').classList.toggle('open');
   }
+});
+
+function cutLangName() {
+  const langElem = document.querySelectorAll('[data-lang]');
+  if (window.innerWidth <= 556) {
+    langElem.forEach((elem) => {
+      elem.innerText = elem.innerText.slice(0, 2);
+    });
+  }
+}
+cutLangName();
+window.addEventListener('optimizedResize', function () {
+  cutLangName();
 });

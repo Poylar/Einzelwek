@@ -113,7 +113,7 @@ body {
           position: relative;
           z-index: 99;
           &:hover {
-            background: #2D2D2D;
+            background: #2d2d2d;
           }
         }
         .lang__list {
@@ -132,7 +132,7 @@ body {
             color: var(--dk-gray);
             text-align: center;
             &:hover {
-              color:var(--white)
+              color: var(--white);
             }
             &:first-child {
               padding: 13px 0 8px 0;
@@ -147,6 +147,27 @@ body {
       .header__callback {
         margin: 0 0 0 24px;
         color: var(--green);
+        display: flex;
+        .callback__link {
+          position: relative;
+          @media (max-width: 556px) {
+            font-size: 0;
+            &:before {
+              content:none;
+            }
+            &:after {
+              width: 32px;
+              height: 32px;
+              background: url(../images/calendar.svg);
+              background-repeat: no-repeat;
+              background-size: contain;
+              display: block;
+            }
+          }
+          &:after {
+            content: '';
+          }
+        }
       }
     }
   }
@@ -436,10 +457,7 @@ body {
         @media (max-width: 1600px) {
           grid-row: auto;
         }
-        @media (max-width: 768px) {
-          height: 212px;
-          overflow: visible;
-        }
+
         @media (max-width: 556px) {
           grid-column: auto;
           overflow: hidden;
