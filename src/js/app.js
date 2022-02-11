@@ -1,15 +1,31 @@
 import '../scss/app.scss';
 import { gsap } from 'gsap';
-import Swiper, { EffectFade, Autoplay } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-Swiper.use([EffectFade, Autoplay]);
 
 function requireAll(r) {
   // get all svg
   r.keys().forEach(r);
 }
 requireAll(require.context('../images/svg/', true, /\.svg$/));
+(function () {
+  var throttle = function (type, name, obj) {
+    obj = obj || window;
+    var running = false;
+    var func = function () {
+      if (running) {
+        return;
+      }
+      running = true;
+      requestAnimationFrame(function () {
+        obj.dispatchEvent(new CustomEvent(name));
+        running = false;
+      });
+    };
+    obj.addEventListener(type, func);
+  };
+
+  /* init - you can init any event */
+  throttle('resize', 'optimizedResize');
+})();
 window.onload = () => {
   const preloader = document.querySelector('.preloader');
   const preloaderText = document.querySelector('.preloader__text');
@@ -53,48 +69,34 @@ window.onload = () => {
         stagger: 0.3,
       }
     );
-    tl.fromTo('.content', { scale: 0 }, { scale: 1 });
     tl.fromTo(
-      '.button',
+      '.content',
+      { scale: 0 },
       {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-      }
-    );
-    gsap.fromTo(
-      '.slider',
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        onComplete: function () {
-          const slider = new Swiper('.slider', {
-            speed: 1000,
-            effect: 'fade',
-            loop:true,
-            fadeEffect: {
-              crossFade: true,
-            },
-            autoplay: {
-              delay: 2555,
-              disableOnInteraction: false,
-            },
-          });
-          if (window.innerWidth >= 1024) {
-            slider.autoplay.stop();
-            const sliderContainer = document.querySelector('.slider');
-            sliderContainer.addEventListener('mouseenter', () => {
-              slider.autoplay.start();
-            });
-            sliderContainer.addEventListener('mouseleave', () => {
-              slider.autoplay.stop();
-            });
-          }
+        scale: 1,
+        onComplete: () => {
+          document.querySelector('.inner__video').play();
         },
       }
     );
   });
 };
+
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.header__lang')) {
+    document.querySelector('.header__lang').classList.toggle('open');
+  }
+});
+
+function cutLangName() {
+  const langElem = document.querySelectorAll('[data-lang]');
+  if (window.innerWidth <= 556) {
+    langElem.forEach((elem) => {
+      elem.innerText = elem.innerText.slice(0, 2);
+    });
+  }
+}
+cutLangName();
+window.addEventListener('optimizedResize', function () {
+  cutLangName();
+});

@@ -61,17 +61,21 @@
         <div class="header__logo">
           <a href="/">
             <picture>
-              <source srcset="./images/mobile-logo.svg" media="(max-width: 1024px)" />
+              <!-- <source srcset="./images/mobile-logo.svg" media="(max-width: 556px)" /> -->
               <img src="./images/logo.svg" alt="" />
             </picture>
           </a>
         </div>
-        <div class="header__info row">
-          <div class="info__item">
-            <a href="https://instagram.com/einzelwerk.pro" target="_blank" class="link-hover"><span>инстаграм</span></a>
+        <div class="header__info row align-center">
+          <div class="header__lang">
+            <div class="lang__current" data-lang>Русский</div>
+            <div class="lang__list">
+              <div class="list__item" data-lang>English</div>
+              <div class="list__item" data-lang>Deutsch</div>
+            </div>
           </div>
-          <div class="info__item">
-            <a href="https://t.me/einzelwerk" target="_blank" class="link-hover"><span>телеграм </span></a>
+          <div class="header__callback">
+            <a href="https://calendly.com/einzelwerk/30min?back=1&month=2022-02" class="callback__link link link-hover"> Назначить звонок </a>
           </div>
         </div>
       </header>
@@ -80,19 +84,33 @@
           <div class="card__item card-1">
             <h1 class="item__title">
               <div class="oh"><span class="text">Первая немецкая</span></div>
-              <div class="oh"><span class="text">диджитал-студия</span></div>
-              <div class="oh"><span class="text">в России и СНГ</span></div>
+              <div class="oh"><span class="text">диджитал-студия в</span></div>
+              <div class="oh"><span class="text">России и СНГ</span></div>
             </h1>
-            <p class="item__description opacity-show">Совместили немецкий прагматизм и русскую смекалку, а все именно для проектирования качественных и продуманных продуктов</p>
             <div class="list__wrapper opacity-show">
-              <h4 class="list__title">Зона экспертизы:</h4>
               <ul class="list">
-                <li class="list__item">Front-end / Back-end</li>
-                <li class="list__item">UX/UI дизайн</li>
-                <li class="list__item">Помощь в расширении бизнеса на европейский рынок</li>
-                <li class="list__item">Контент-менеджмент</li>
-                <li class="list__item">Копирайтинг</li>
-                <li class="list__item">Аудит</li>
+                <li class="list__item">Комбо немецкого прагматизма и русской смекалки</li>
+                <li class="list__item">15 лет реального опыта на цифровом рынке Европы</li>
+                <li class="list__item">Реализуем продуманные цифровые решения</li>
+                <li class="list__item">Выводим продукты и услуги на европейский рынок</li>
+              </ul>
+            </div>
+            <div class="column__list">
+              <h4 class="list__title">Зоны эксперизы</h4>
+              <ul class="row list">
+                <div class="col">
+                  <div class="list__item">Разработка: <br />Front-end / Back-end</div>
+                  <div class="list__item">
+                    Дизайн и<br />
+                    юзабилити: UX/UI
+                  </div>
+                  <div class="list__item">Продвижение: <br />SEO/ SEA/ SMM</div>
+                </div>
+                <div class="col">
+                  <div class="list__item">Продуктовая бизнес-аналитика</div>
+                  <div class="list__item">Вывод продуктов на европейский рынок</div>
+                  <div class="list__item">Цифровой аудит</div>
+                </div>
               </ul>
             </div>
           </div>
@@ -104,12 +122,9 @@
               <h3 class="item__title oh"><span class="text">Дисклеймер</span></h3>
             </div>
             <div class="item__description opacity-show description__links">
-              Мы упорно работаем над нашим сайтом и проектами заказчиков, пока что вы можете написать нам на
-
-              <a href="mailto:moinmoin@einzelwerk.pro" class="link link-hover"><span>почту</span><span class="sep"> / </span></a>
-              <a href="https://t.me/einzelwerk" target="_blank" class="link link-hover"><span>телеграм</span><span class="sep"> / </span></a
-              >
-              <a href="https://instagram.com/einzelwerk.pro" target="_blank" class="link link-hover"><span>инстаграм</span></a>
+              Это мини-версия сайта для нашего и вашего удобства. "Большой" сайт готовится к запуску. А пока пишите нам на
+              <a href="mailto:moin@einzelwerk.pro" class="link link-hover">почту</a> <span class="sep">или</span>
+              <a href="https://calendly.com/einzelwerk/30min?back=1&month=2022-02" class="link link-hover">назначьте звонок</a>
             </div>
           </div>
           <div class="card__item card-3 col">
@@ -121,34 +136,22 @@
             </div>
             <div class="location__wrapper col">
               <div class="oh location__item">
-                <div class="text">Гамбург</div>
+                <div class="text">Гамбург, Москва,</div>
               </div>
               <div class="oh location__item">
-                <div class="text">Москва</div>
-              </div>
-              <div class="oh location__item">
-                <div class="text">Санкт-Петербург</div>
+                <div class="text">Мюнхен, СПб.</div>
               </div>
             </div>
           </div>
           <div class="card__item card-4">
-            <div class="item__button button--calypso button">
-              <svg width="24" height="24"><use xlink:href="sprite.svg#message" /></svg>
-              <a href="mailto:moinmoin@einzelwerk.pro"> <span>moinmoin@einzelwerk.pro</span></a>
-            </div>
-            <div class="swiper slider">
-              <div class="swiper-wrapper">
-                <% for(var i = 1; i < 4; i++) { %>
-                <div class="swiper-slide" style="background-image: url('./images/<%= i -%>.jpg')"></div>
-
-                <% } %>
-              </div>
+            <div class="video__wrapper">
+              <video class="inner__video" src="./images/preview.mp4" muted loop></video>
             </div>
           </div>
         </div>
       </main>
       <footer class="footer">
-        <div class="container row align-center j-center">
+        <div class="container row align-center space-between">
           <div class="footer__copyright row align-center">
             <span>2022</span>
             <div class="copyright__icon">
@@ -157,6 +160,20 @@
               </svg>
             </div>
             <span> айнцльверк</span>
+          </div>
+          <div class="footer__socials row align-center">
+            <div class="social__item">
+              <a href="" class="link link-hover"> Дрибббл </a>
+            </div>
+            <div class="social__item">
+              <a href="https://www.behance.net/einzelwerk" class="link link-hover"> Беханс</a>
+            </div>
+            <div class="social__item">
+              <a href="" class="link link-hover"> Инстаграм </a>
+            </div>
+            <div class="social__item">
+              <a href="https://t.me/einzelwerk" class="link link-hover"> Телеграм</a>
+            </div>
           </div>
         </div>
       </footer>
