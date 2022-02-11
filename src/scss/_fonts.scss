@@ -1,0 +1,13 @@
+@mixin font($fname, $flink, $number, $fstyle) {
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $number;
+    font-display: swap;
+    src: url('../fonts/' + $flink + '.woff2') format('woff2');
+  }
+}
+
+@include font('Heading-Now', 'Heading-Now-Regular', 400, normal);
+@include font('Heading-Now', 'Heading-Now-85-Medium', 500, normal);
+@include font('Montserrat', 'Montserrat-Regular', 400, normal);
