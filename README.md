@@ -1,4 +1,2 @@
 # WebpackStarter
-
-.npm start dev 
-.npm start build
+https://poylar.github.io/Einzelwek/
